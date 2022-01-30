@@ -63,6 +63,34 @@ class Main {
         }
     }
 
+    public void deleteAtPos(int pos) {
+        if (head == null)
+            return;
+        else {
+            if (head.next == null) {
+                if (pos != 1) {
+                    System.out.println("Invalid position");
+                }
+                else head = null;
+            } else {
+                int c = 1;
+                if (pos > count())
+                    System.out.println("Invalid position");
+                else {
+                    Node temp = head;
+                    while (temp != null) {
+                        if (c == pos - 1) {
+                            break;
+                        }
+                        c++;
+                        temp = temp.next;
+                    }
+                    temp.next = temp.next.next;
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) {
         Main obj = new Main();
         Node n1 = new Node(10);
