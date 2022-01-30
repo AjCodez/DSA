@@ -1,0 +1,109 @@
+class Node {
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+    }
+}
+
+public class Cll {
+    Node head;
+
+    public void cinsertAtBeg(int data) {
+        Node n = new Node(data);
+        if (head == null) {
+            head = n;
+            n.next = head;
+        } else {
+            Node temp = head;
+            n.next = head;
+            while (temp.next != head) {
+                temp = temp.next;
+            }
+            temp.next = n;
+            head = n;
+        }
+    }
+
+    public void cinsertAtEnd(int data) {
+        Node n = new Node(data);
+        if (head == null) {
+            head = n;
+            n.next = head;
+        } else {
+            Node temp = head;
+            while (temp.next != head) {
+                temp = temp.next;
+            }
+            n.next = temp.next;
+            temp.next = n;
+        }
+    }
+
+    public int count() {
+        Node temp = head;
+        if (head == null)
+            return 0;
+        else {
+            int c = 1;
+            while (temp.next != head) {
+                c++;
+                temp = temp.next;
+            }
+            return c;
+        }
+    }
+
+    public void cinsertAtPos(int pos, int data) {
+        Node n = new Node(data);
+        if (head == null) {
+            if (pos != 1)
+                System.out.println("Invalid Position");
+            else {
+                head = n;
+                n.next = head;
+            }
+        } else {
+            if (pos == 1) {
+                Node temp = head;
+                n.next = head;
+                while (temp.next != head) {
+                    temp = temp.next;
+                }
+                temp.next = n;
+                head = n;
+            } else if (pos > count() + 1) {
+                System.out.println("Invalid Position");
+            } else {
+                Node temp = head;
+                int c = 1;
+                while (temp.next != head) {
+                    if (pos - 1 == c)
+                        break;
+                    c++;
+                    temp = temp.next;
+                }
+                n.next = temp.next;
+                temp.next = n;
+            }
+        }
+    }
+
+    public void print() {
+            Node temp = head;
+            while (temp!= head) {
+                System.out.print(temp.data+" ");
+                temp = temp.next;
+            }
+        }
+
+    public static void main(String[] args) {
+        Cll obj = new Cll();
+        obj.cinsertAtBeg(10);
+        obj.cinsertAtBeg(20);
+        obj.cinsertAtBeg(30);
+        obj.cinsertAtEnd(40);
+        obj.print();
+    }
+}
