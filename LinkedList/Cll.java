@@ -90,13 +90,73 @@ public class Cll {
         }
     }
 
-    public void print() {
+    public void cdeleteAtBeg() {
+        if (head == null)
+            return;
+        else {
             Node temp = head;
-            while (temp!= head) {
-                System.out.print(temp.data+" ");
+            while (temp.next != head) {
                 temp = temp.next;
             }
+            temp.next = head.next;
+            head = head.next;
         }
+    }
+
+    public void cdeleteAtEnd() {
+        if (head == null) {
+            return;
+        } else {
+            if (head.next == head)
+                head = null;
+            else {
+                Node temp = head;
+                while (temp.next.next != head) {
+                    temp = temp.next;
+                }
+                temp.next = head;
+            }
+        }
+    }
+
+    public void cdeleteAtPos(int pos) {
+        if (head == null)
+            return;
+        else {
+            if (pos == 1) {
+                if (head.next == head) {
+                    head = null;
+                } else {
+                    Node temp = head;
+                    while (temp.next != head) {
+                        temp = temp.next;
+                    }
+                    temp.next = head.next;
+                    head = head.next;
+                }
+            } else if (pos > count()) {
+                System.out.println("Invalid Position");
+            } else {
+                Node temp = head;
+                int c = 1;
+                while (temp.next != head) {
+                    if (pos - 1 == c)
+                        break;
+                    c++;
+                    temp = temp.next;
+                }
+                temp.next = temp.next.next;
+            }
+        }
+    }
+
+    public void print() {
+        Node temp = head;
+        while (temp != head) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+    }
 
     public static void main(String[] args) {
         Cll obj = new Cll();
@@ -104,6 +164,8 @@ public class Cll {
         obj.cinsertAtBeg(20);
         obj.cinsertAtBeg(30);
         obj.cinsertAtEnd(40);
+        obj.cdeleteAtBeg();
+        obj.cdeleteAtEnd();
         obj.print();
     }
 }
