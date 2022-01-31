@@ -151,10 +151,15 @@ public class Cll {
     }
 
     public void print() {
-        Node temp = head;
-        while (temp != head) {
-            System.out.print(temp.data + " ");
-            temp = temp.next;
+        if (head == null)
+            return;
+        else {
+            Node temp = head;
+            while (temp.next != head) {
+                System.out.print(temp.data + " ");
+                temp = temp.next;
+            }
+            System.out.print(temp.data);
         }
     }
 
