@@ -13,11 +13,13 @@ class Node{
       else
         return false;
     }
+
     public void push(int data){
       Node n = new Node(data);
       n.next=top;
       top=n;
     }
+
     public int pop(){
       if(isEmpty()){
         System.out.println("Stack underflow");
@@ -29,6 +31,7 @@ class Node{
         return x;
       }
     }
+    
     public int peek(){
       if(isEmpty()){
         System.out.println("Stack underflow");
