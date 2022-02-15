@@ -7,16 +7,17 @@ class Node {
     }
 }
 
-class queue_class {
+class DEqueue {
     static Node head;
 
-    public static boolean isEmpty(){
-        Node temp=head;
-        if(temp==null)
-          return true;
+    public static boolean isEmpty() {
+        Node temp = head;
+        if (temp == null)
+            return true;
         else
-          return false;
+            return false;
     }
+
     public static void insertFront(int x) {
         Node n = new Node(x);
         n.next = head;
@@ -58,9 +59,10 @@ class queue_class {
             temp.next = null;
         }
     }
-    public static int getRear(){
-        Node temp=head;
-        if (temp==null) 
+
+    public static int getRear() {
+        Node temp = head;
+        if (temp == null)
             return -1;
         else if (temp.next == null)
             return temp.data;
@@ -71,13 +73,15 @@ class queue_class {
             return temp.next.data;
         }
     }
-    public static int getFront(){
-        Node temp=head;
-        if (temp==null) 
+
+    public static int getFront() {
+        Node temp = head;
+        if (temp == null)
             return -1;
-        else 
+        else
             return temp.data;
     }
+
     public static void main(String[] args) {
         isEmpty();
         insertFront(5);
