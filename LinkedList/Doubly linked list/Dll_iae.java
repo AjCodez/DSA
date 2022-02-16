@@ -15,7 +15,6 @@ class Node{
           while(temp.next!=null){
               temp=temp.next;
           }
-          n.next=temp.next;
           n.prev=temp;
           temp.next=n;
        }
