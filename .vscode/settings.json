@@ -1,5 +1,6 @@
 {
     "java.project.sourcePaths": [
-        "LinkedList/Circular linked list"
+        "LinkedList/Circular linked list",
+        "Stack and Queue"
     ]
 }
