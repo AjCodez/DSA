@@ -1,65 +1,70 @@
 public class queue_arr {
-  static int front,rear,cap;
+  static int front, rear, cap;
   static int q[];
-  queue_arr(int c){
-    front=0;
-    rear=0;
-    cap=c;
-    q=new int[cap];
+
+  queue_arr(int c) {
+    front = 0;
+    rear = 0;
+    cap = c;
+    q = new int[cap];
   }
-  public boolean isEmpty(){
-    if(rear==front)
+
+  public boolean isEmpty() {
+    if (rear == front)
       return true;
     else
       return false;
   }
-  public boolean isFull(){
-    if(rear==cap)
+
+  public boolean isFull() {
+    if (rear == cap)
       return true;
     else
       return false;
   }
-  public void enqueue(int data){
-    if(rear==cap)
+
+  public void enqueue(int data) {
+    if (rear == cap)
       System.out.println("Queue is full");
-    else{
-      q[rear]=data;
+    else {
+      q[rear] = data;
       rear++;
     }
   }
-  public int dequeue(){
-    if(front==rear){
+
+  public int dequeue() {
+    if (front == rear) {
       System.out.println("Queue is empty");
       return -1;
-    }
-    else{
-      int x=q[front];
-      for(int i=0; i<rear-1; i++)
-        q[i]=q[i+1];
-        
+    } else {
+      int x = q[front];
+      for (int i = 0; i < rear - 1; i++)
+        q[i] = q[i + 1];
+
       rear--;
-      q[rear]=0;
+      q[rear] = 0;
       return x;
     }
   }
-  public int front(){
-    if(front==rear){
+
+  public int front() {
+    if (front == rear) {
       System.out.println("Queue is empty");
       return -1;
-    }
-    else{
+    } else {
       return q[front];
     }
   }
-  public int rear(){
-    if(front==rear){
+
+  public int rear() {
+    if (front == rear) {
       System.out.println("Queue is empty");
       return -1;
-    }
-    else{
+    } else {
       return q[rear];
     }
   }
+
   public static void main(String[] args) {
     queue_arr q1 = new queue_arr(4);
     System.out.println(q1.dequeue());
