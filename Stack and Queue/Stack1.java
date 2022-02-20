@@ -2,7 +2,6 @@ public class Stack1 {
     static final int max = 5;
     int arr[] = new int[max];
     int top;
-
     Stack1() {
         top = -1;
     }
