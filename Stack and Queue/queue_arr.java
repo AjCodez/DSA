@@ -7,6 +7,18 @@ public class queue_arr {
     cap=c;
     q=new int[cap];
   }
+  public boolean isEmpty(){
+    if(rear==front)
+      return true;
+    else
+      return false;
+  }
+  public boolean isFull(){
+    if(rear==cap)
+      return true;
+    else
+      return false;
+  }
   public void enqueue(int data){
     if(rear==cap)
       System.out.println("Queue is full");
