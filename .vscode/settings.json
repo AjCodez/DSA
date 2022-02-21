@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
+        "Stack and Queue",
         "LinkedList/Circular linked list",
-        "Stack and Queue"
+        "recursion"
     ]
 }
