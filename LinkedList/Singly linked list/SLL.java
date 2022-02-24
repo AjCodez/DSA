@@ -68,16 +68,18 @@ public class SLL {
         }
     }
 
-    public static void deleteFromEnd(){
-        Node temp= head;
-        if(temp==null) return;
-        else if(temp.next==null) head=null;
-        else{
-            while(temp.next.next!=null){
+    public static void deleteFromEnd() {
+        Node temp = head;
+        if (temp == null)
+            return;
+        else if (temp.next == null)
+            head = null;
+        else {
+            while (temp.next.next != null) {
                 temp = temp.next;
             }
             temp.next = null;
-            
+
         }
     }
 
