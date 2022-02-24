@@ -163,4 +163,8 @@ public class SLL {
         }
     }
 
+    public static void main(String[] args) {
+        SLL obj = new SLL();
+    }
+
 }
