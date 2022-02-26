@@ -84,17 +84,17 @@ public class SLL {
     }
 
     public static int count() {
-        if(head ==  null)
+        if (head == null)
             return 0;
-        else{
-        int c = 1;
-        Node temp = head;
-        while (temp.next != null) {
-            ++c;
-            temp = temp.next;
+        else {
+            int c = 1;
+            Node temp = head;
+            while (temp.next != null) {
+                ++c;
+                temp = temp.next;
+            }
+            return c;
         }
-        return c;
-    }
     }
 
     public static void deleteFromPos(int pos) {
