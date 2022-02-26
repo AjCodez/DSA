@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Node{
     int data;
     Node next;
@@ -6,9 +8,35 @@ class Node{
     }
 }
 public class PrintLLUsingRecursion{
-    Node head;
+    static Node head;
 
     public static void insertAtEnd(int x){
-        
+        Node n = new Node(x);
+        if(head==null)
+            head=n;
+        else{
+            Node temp= head;
+            while(temp.next!=null){
+                temp=temp.next;
+            }
+            temp.next=n;
+        }
+    }
+
+    public static void print(Node temp){
+        if(temp==null)
+            return;
+        else{
+            System.out.print(temp.data+" ");
+            print(temp.next);
+        }
+    }
+    public static void main(String[] args) {
+        insertAtEnd(10);
+        insertAtEnd(20);
+        insertAtEnd(30);
+        insertAtEnd(40);
+        insertAtEnd(50);
+        print(head);
     }
 }
