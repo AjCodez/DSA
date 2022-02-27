@@ -9,11 +9,11 @@ class Node{
 public class CountNodesRecursion {
     static Node head;
 
-    public static int count(Node temp, int c){
+    public static int count(Node temp){
         if(temp==null)
-            return c;
+            return 0;
         else{
-            return count(temp.next, c+1);
+            return 1+count(temp.next);
         }
     }
 
@@ -36,6 +36,6 @@ public class CountNodesRecursion {
         insertAtEnd(3);
         insertAtEnd(4);
         insertAtEnd(5);
-        System.out.println(count(head, 0));
+        System.out.println(count(head));
     }
 }
