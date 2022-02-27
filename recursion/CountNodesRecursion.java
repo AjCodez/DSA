@@ -12,9 +12,8 @@ public class CountNodesRecursion {
     public static int count(Node temp){
         if(temp==null)
             return 0;
-        else{
+        else
             return 1+count(temp.next);
-        }
     }
 
     public static void insertAtEnd(int x){
