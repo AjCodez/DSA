@@ -24,7 +24,7 @@ public class queue_arr {
   }
 
   public void enqueue(int data) {
-    if (rear == cap)
+    if (isFull())
       System.out.println("Queue is full");
     else {
       q[rear] = data;
@@ -33,7 +33,7 @@ public class queue_arr {
   }
 
   public int dequeue() {
-    if (front == rear) {
+    if (isEmpty()) {
       System.out.println("Queue is empty");
       return -1;
     } else {
@@ -48,7 +48,7 @@ public class queue_arr {
   }
 
   public int front() {
-    if (front == rear) {
+    if (isEmpty()) {
       System.out.println("Queue is empty");
       return -1;
     } else {
@@ -57,7 +57,7 @@ public class queue_arr {
   }
 
   public int rear() {
-    if (front == rear) {
+    if (isEmpty()) {
       System.out.println("Queue is empty");
       return -1;
     } else {
