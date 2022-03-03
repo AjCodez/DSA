@@ -9,6 +9,7 @@ class Node {
 
 class DEqueue {
     static Node head;
+    static Node tail;
 
     public static boolean isEmpty() {
         Node temp = head;
@@ -20,20 +21,25 @@ class DEqueue {
 
     public static void insertFront(int x) {
         Node n = new Node(x);
-        n.next = head;
-        head = n;
+        if(head == null){
+            head=n;
+            tail=n;
+        }
+        else{
+            n.next = head;
+            head = n;
+        }
     }
 
     public static void insertRear(int a) {
         Node n = new Node(a);
-        if (head == null)
+        if (head == null){
             head = n;
+            tail=n;
+        }
         else {
-            Node temp = head;
-            while (temp.next != null) {
-                temp = temp.next;
-            }
-            temp.next = n;
+            tail.next=n;
+            tail=n;
         }
     }
 
