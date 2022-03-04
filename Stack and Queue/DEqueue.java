@@ -39,7 +39,7 @@ class DEqueue {
         }
         else {
             tail.next=n;
-            tail=n;
+            tail=tail.next;
         }
     }
 
@@ -62,6 +62,7 @@ class DEqueue {
             while (temp.next.next != null) {
                 temp = temp.next;
             }
+            tail=temp;
             temp.next = null;
         }
     }
@@ -70,22 +71,16 @@ class DEqueue {
         Node temp = head;
         if (temp == null)
             return -1;
-        else if (temp.next == null)
-            return temp.data;
         else {
-            while (temp.next.next != null) {
-                temp = temp.next;
-            }
-            return temp.next.data;
+            return tail.data;
         }
     }
 
     public static int getFront() {
-        Node temp = head;
-        if (temp == null)
+        if (head == null)
             return -1;
         else
-            return temp.data;
+            return head.data;
     }
 
     public static void main(String[] args) {
