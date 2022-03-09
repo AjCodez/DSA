@@ -3,16 +3,16 @@ import java.util.*;
 public class BinarySearch {
     public static boolean bSearch(int[] ar, int x) {
         int l=0,r=ar.length-1;
-        while(l<r){
-            int m=(l+r-1)/2;
+        while(l<=r){
+            int m=l+(r-l)/2;
             if(ar[m]==x){
                 return true;
             }
             else{
                 if(ar[m]<x)
-                    l=m;
+                    l=m+1;
                 else
-                    r=m;
+                    r=m-1;
             }
         }
         return false;
