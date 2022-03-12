@@ -1,12 +1,9 @@
-class SelectionSort
-{
-	void selectionSort(int arr[])
-	{
+class SelectionSort {
+	void selectionSort(int arr[]) {
 		int n = arr.length;
-		for (int i = 0; i < n-1; i++)
-		{
+		for (int i = 0; i < n - 1; i++) {
 			int min_idx = i;
-			for (int j = i+1; j < n; j++)
+			for (int j = i + 1; j < n; j++)
 				if (arr[j] < arr[min_idx])
 					min_idx = j;
 
@@ -16,18 +13,16 @@ class SelectionSort
 		}
 	}
 
-	void printArray(int arr[])
-	{
+	void printArray(int arr[]) {
 		int n = arr.length;
-		for (int i=0; i<n; ++i)
-			System.out.print(arr[i]+" ");
+		for (int i = 0; i < n; ++i)
+			System.out.print(arr[i] + " ");
 		System.out.println();
 	}
 
-	public static void main(String args[])
-	{
+	public static void main(String args[]) {
 		SelectionSort ob = new SelectionSort();
-		int arr[] = {64,25,12,22,11};
+		int arr[] = { 64, 25, 12, 22, 11 };
 		ob.selectionSort(arr);
 		System.out.println("Sorted array");
 		ob.printArray(arr);
