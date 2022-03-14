@@ -1,7 +1,7 @@
 import java.util.Arrays;
+
 public class InsertionSort {
-	public static void insertionSort(int arr[])
-	{
+	public static void insertionSort(int arr[]) {
 		int n = arr.length;
 		for (int i = 1; i < n; ++i) {
 			int key = arr[i];
@@ -15,9 +15,9 @@ public class InsertionSort {
 	}
 
 	public static void main(String args[]) {
-        int[] arr = { -2, 45, 0, 11, -9 };
-        insertionSort(arr);
-        System.out.println("Sorted Array in Ascending Order:");
-        System.out.println(Arrays.toString(arr));
-  }
+		int[] arr = { -2, 45, 0, 11, -9 };
+		insertionSort(arr);
+		System.out.println("Sorted Array in Ascending Order:");
+		System.out.println(Arrays.toString(arr));
+	}
 }
