@@ -1,75 +1,64 @@
-public class MergeSort
-{
-	void merge(int arr[], int l, int m, int r)
-	{
-		int n1 = m - l + 1;
-		int n2 = r - m;
+import java.util.Scanner;
 
-		int L[] = new int[n1];
-		int R[] = new int[n2];
-		for (int i = 0; i < n1; ++i)
-			L[i] = arr[l + i];
-		for (int j = 0; j < n2; ++j)
-			R[j] = arr[m + 1 + j];
+public class MergeSort1 {
 
-		int i = 0, j = 0;
+    public static void merge(int arr[], int l, int m, int r) {
+        int [] ar1 = new int[m-l+1];
+        int [] ar2 = new int[r-m];
 
-		int k = l;
-		while (i < n1 && j < n2) {
-			if (L[i] <= R[j]) {
-				arr[k] = L[i];
-				i++;
-			}
-			else {
-				arr[k] = R[j];
-				j++;
-			}
-			k++;
-		}
+        for (int i = 0; i < ar1.length; i++) {
+            ar1[i] = arr[l+i];
+        }
+        for (int i = 0; i < ar2.length; i++) {
+            ar2[i] = arr[m+i+1];
+        }
 
-		while (i < n1) {
-			arr[k] = L[i];
-			i++;
-			k++;
-		}
+        int i=0,j=0,k=l;
+        while(i<(m-l+1) && j<(r-m)){
+            
+            if(ar1[i]<=ar2[j]){
+                arr[k]=ar1[i];
+                k++;
+                i++;
+            }
+            else{
+                arr[k]=ar2[j];
+                k++;
+                j++;
+            }
+        }
+        while(i<m-l+1){
+            arr[k]=ar1[i];
+            i++;
+            k++;
+        }
+        while(j<r-m){
+            arr[k]=ar2[j];
+            j++;
+            k++;
+        }
 
-		while (j < n2) {
-			arr[k] = R[j];
-			j++;
-			k++;
-		}
-	}
+    }
 
-	void sort(int arr[], int l, int r)
-	{
-		if (l < r) {
-			int m =l+ (r-l)/2;
-
-			sort(arr, l, m);
-			sort(arr, m + 1, r);
-			merge(arr, l, m, r);
-		}
-	}
-
-	static void printArray(int arr[])
-	{
-		int n = arr.length;
-		for (int i = 0; i < n; ++i)
-			System.out.print(arr[i] + " ");
-		System.out.println();
-	}
-
-	public static void main(String args[])
-	{
-		int arr[] = { 12, 11, 13, 5, 6, 7 };
-
-		System.out.println("Given Array");
-		printArray(arr);
-
-		MergeSort ob = new MergeSort();
-		ob.sort(arr, 0, arr.length - 1);
-
-		System.out.println("\nSorted array");
-		printArray(arr);
-	}
+    public static void mergeSort(int arr[], int l, int r) {
+        if(l<r){
+            int m = l + (r-l)/2;
+            mergeSort(arr, l, m);
+            mergeSort(arr, m+1, r);
+            merge(arr, l, m, r);
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int [] arr = new int [n];
+        for (int i = 0; i < n; i++) {
+            arr[i]= sc.nextInt();
+        }
+        mergeSort(arr, 0, n-1);
+        for (int i = 0; i < n; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        sc.close();
+    }
 }
