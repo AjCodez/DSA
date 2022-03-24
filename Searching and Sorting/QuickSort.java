@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class QuickSort1 {
+public class QuickSort {
 
     private static void swap(int [] arr, int a, int b) {
         int temp = arr[a];
