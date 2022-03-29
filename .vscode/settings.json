@@ -2,7 +2,8 @@
     "java.project.sourcePaths": [
         "recursion",
         "Stack and Queue",
+        "Searching and Sorting",
         "LinkedList/Circular linked list",
-        "Searching and Sorting"
+        "Tree"
     ]
 }
