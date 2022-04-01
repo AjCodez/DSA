@@ -8,12 +8,11 @@ class TreeNode {
     TreeNode(){}
 }
 
-public class BinaryTreeArr {
+public class BinaryTreeArr{
     static TreeNode root;
     static int i = 0;
 
-    static TreeNode put(int a[],int n)
-    {
+    static TreeNode put(int a[],int n){
         if(i>=n)
         return null;
         TreeNode r = new TreeNode(a[i]);
