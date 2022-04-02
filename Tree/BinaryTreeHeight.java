@@ -10,7 +10,7 @@ class TreeNode {
 
 }
 
-public class BinaryTreeHieght {
+public class BinaryTreeHeight {
     static TreeNode root;
 
     public static int binaryTreeHieght(TreeNode root){
