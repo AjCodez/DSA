@@ -1,42 +1,37 @@
-class TreeNode {
+class Node {
     int data;
-    TreeNode left, right;
+    Node left;
+    Node right;
 
-    TreeNode(int data) {
+    Node(int data) {
         this.data = data;
     }
-    TreeNode(){}
 }
 
 public class BinaryTreeArr {
-    static TreeNode root;
-    static int i = 0;
+    static Node root;
 
-    static TreeNode put(int a[],int n)
-    {
-        if(i>=n)
-        return null;
-        TreeNode r = new TreeNode(a[i]);
-        ++i;
-        r.left = put(a,n);
-        ++i;
-        r.right = put(a,n);
-        return r;
+    public static Node buildBinaryTree(int arr[], int i) {
+        i++;
+        if (arr[i] == -1)
+            return null;
+        Node node = new Node(arr[i]);
+        node.left = buildBinaryTree(arr, i);
+        node.right = buildBinaryTree(arr, i);
+        return node;
     }
 
-    public static void Traverse(TreeNode Node) {
-
-        if(Node==null)
-        return;
-
-        System.out.print(Node.data+" ");
-        Traverse(Node.left);
-        Traverse(Node.right);
-        
+    public static void postOrder(Node Node) {
+        if (Node == null)
+            return;
+        postOrder(Node.left);
+        postOrder(Node.right);
+        System.out.print(Node.data + " ");
     }
+
     public static void main(String[] args) {
-        int a[]= {1,2,3,4,5,6,7,8,9};
-        TreeNode r =put(a,a.length);
-        Traverse(r);
+        int arr[] = { -1, 2, 1, 5, 3, 4, 7 };
+        root = buildBinaryTree(arr, -1);
+        postOrder(root);
     }
 }
