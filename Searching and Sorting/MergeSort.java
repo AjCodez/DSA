@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class MergeSort1 {
+public class MergeSort {
 
     public static void merge(int arr[], int l, int m, int r) {
         int [] ar1 = new int[m-l+1];
