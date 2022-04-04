@@ -13,12 +13,21 @@ class TreeNode {
 public class BinaryTreeNumberOfLeafNodes {
     static TreeNode root;
 
-    public static int binaryTreeHieght(TreeNode root, int c){
-        if(root==null)
-            return c+1;
-        int l = binaryTreeHieght(root.left, c);
-        int r = binaryTreeHieght(root.right, c);
-        return c+l+r;
+    public static int binaryTreeNumberOfLeafNodes(TreeNode root){
+        if(root.left==null && root.right==null)
+            return 1;
+        else{
+        int l, r;
+        if(root.left!=null)
+            l = binaryTreeNumberOfLeafNodes(root.left);
+        else 
+            l=0;
+        if(root.right!=null)
+            r = binaryTreeNumberOfLeafNodes(root.right);
+        else 
+            r=0;
+        return l+r;
+        }
     }
 
     public static void main(String[] args) {
@@ -31,7 +40,7 @@ public class BinaryTreeNumberOfLeafNodes {
         root.right.right = new TreeNode(65);
         root.right.right.left = new TreeNode(65);
         root.right.right.left.right = new TreeNode(65);
-        int h = binaryTreeHieght(root, 0);
+        int h = binaryTreeNumberOfLeafNodes(root);
         System.out.println(h);
     }
 }
