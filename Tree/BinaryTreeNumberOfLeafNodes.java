@@ -40,7 +40,7 @@ public class BinaryTreeNumberOfLeafNodes {
         root.right.right = new TreeNode(65);
         root.right.right.left = new TreeNode(65);
         root.right.right.left.right = new TreeNode(65);
-        int h = binaryTreeNumberOfLeafNodes(root);
-        System.out.println(h);
+        int n = binaryTreeNumberOfLeafNodes(root);
+        System.out.println(n);
     }
 }
