@@ -15,7 +15,7 @@ public class BinaryTreeHeight {
 
     public static int binaryTreeHieght(TreeNode root){
         if(root==null)
-            return 0;
+            return -1;
         int l = binaryTreeHieght(root.left);
         int r = binaryTreeHieght(root.right);
         if(l>r)
@@ -32,8 +32,8 @@ public class BinaryTreeHeight {
         root.left.right = new TreeNode(60);
         root.right.left = new TreeNode(55);
         root.right.right = new TreeNode(65);
-        root.right.right.left = new TreeNode(65);
-        root.right.right.left.right = new TreeNode(65);
+        root.left.right.left = new TreeNode(65);
+        root.left.right.right = new TreeNode(65);
         int h = binaryTreeHieght(root);
         System.out.println(h);
     }
