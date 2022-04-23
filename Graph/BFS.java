@@ -56,7 +56,6 @@ public class BFS {
         graph.insertEdge(4, 1);
         graph.insertEdge(3, 1);
         graph.insertEdge(5, 4);
-        graph.insertEdge(5, 3);
         System.out.println("Breadth First Traversal for the graph is:");
         graph.bfs(0);
     }
