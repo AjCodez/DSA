@@ -32,6 +32,20 @@ public class BST {
         System.out.print(Node.data + " ");
         inOrder(Node.right);
     }
+    public static void preOrder(TreeNode Node) {
+        if(Node == null)
+            return; 
+        System.out.print(Node.data + " ");
+        preOrder(Node.left);
+        preOrder(Node.right);
+    }
+    public static void postOrder(TreeNode Node) {
+        if(Node == null)
+            return; 
+        postOrder(Node.left);
+        postOrder(Node.right);
+        System.out.print(Node.data + " ");
+    }
 
     public static void main(String[] args) {
         root = insertion(root, 10);
@@ -40,6 +54,10 @@ public class BST {
         root = insertion(root, 180);
         root = insertion(root, 356);
         root = insertion(root, 33);
+        preOrder(root);
+        System.out.println();
         inOrder(root);
+        System.out.println();
+        postOrder(root);
     }
 }
