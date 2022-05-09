@@ -13,20 +13,20 @@ class TreeNode {
 public class BinaryTreeNumberOfLeafNodes {
     static TreeNode root;
 
-    public static int binaryTreeNumberOfLeafNodes(TreeNode root){
-        if(root.left==null && root.right==null)
+    public static int binaryTreeNumberOfLeafNodes(TreeNode root) {
+        if (root.left == null && root.right == null)
             return 1;
-        else{
-        int l, r;
-        if(root.left!=null)
-            l = binaryTreeNumberOfLeafNodes(root.left);
-        else 
-            l=0;
-        if(root.right!=null)
-            r = binaryTreeNumberOfLeafNodes(root.right);
-        else 
-            r=0;
-        return l+r;
+        else {
+            int l, r;
+            if (root.left != null)
+                l = binaryTreeNumberOfLeafNodes(root.left);
+            else
+                l = 0;
+            if (root.right != null)
+                r = binaryTreeNumberOfLeafNodes(root.right);
+            else
+                r = 0;
+            return l + r;
         }
     }
 
