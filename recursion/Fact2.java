@@ -4,8 +4,7 @@ class Fact2{
         if (n <= 1) 
             return c;
         else    
-            c=c*n;
-            return fact(c,n-1);    
+            return fact(c*n,n-1);    
     }
     public static void main(String[] args) {
         int n=5;
